@@ -1,0 +1,682 @@
+body{
+    background-color: rgba(7, 15, 32, 0.986);
+    color: white;
+}
+
+.left-div{
+    width: 300px;
+    height: 460px;
+    background-color: rgb(89, 60, 253);
+    border-radius: 20px;
+    z-index:2;
+    position: relative;
+}
+
+.avatar{
+    width: 100px;
+    margin-top: 80px;
+    margin-left: 40px;
+}
+
+.report{
+    margin-top: 40px;
+    margin-left: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.name{
+    margin-left: 40px;
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.09rem;
+    margin-top: -10px;
+}
+
+
+/*Elements need to have a position property set for z-index to take effect. Try adding position: relative; to both .left-div and .daily-weekly if they don't have a position set.*/
+
+.daily-weekly{
+    width:300px;
+    height: 250px;
+    background-color: rgba(24, 28, 83, 0.993);
+    border-radius: 20px;
+    margin-top: -30px;
+    z-index: 1;
+    position: relative;
+   
+    
+}
+
+/*We cant add the elements in the div down he is useful just as background cause if we set elements there and add margin to the elements from the top the div will distort thats 
+why we use that div as an empty div*/
+.daily{
+    margin-top:150px;
+}
+
+.daily,
+.weekly,
+.monthly{
+    margin-left: 40px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.09rem;
+    line-height: 2.5rem;
+    color: rgba(206, 185, 231, 0.904);
+    
+}
+
+.daily:hover,
+.weekly:hover,
+.monthly:hover{
+    color: white;
+    
+}
+
+
+
+/*We give the containers the width that we give to the main(right-container) container so that that they can spread*/
+.fisrt-three-containers{
+    display: flex;
+    width: 1200px;
+    
+    
+}
+
+.second-three-containers{
+    display: flex;
+    width: 1200px;
+    margin-top: 100px;
+   
+}
+
+.work{
+    margin-left: 40px;
+}
+
+main{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+  
+
+}
+.work,
+.play,
+.study{
+    width:350px;
+    background-color: rgba(24, 28, 83, 0.993);
+    margin-right: 40px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/*We style the overlay inside the separate divs (work,play,study etc)Where we add the opacity of 0 and transition for that opacity of 0.3s ease - After the hover of the work container 
+the opacity will incrase for 1 (displayed)*/
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.13);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 20px;
+    
+}
+
+/*We apply the overlay on the divs when hovered where we incrase the opacity to 1 */
+.work:hover .overlay,
+.play:hover .overlay,
+.study:hover .overlay,
+.exercise:hover .overlay,
+.social:hover .overlay,
+.self-care:hover .overlay{
+
+    opacity: 1;
+}
+
+.work-heading,
+.play-heading{
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+/*We give the riht containers width of 900px and than the the div first 3 containers of 900px width same for the second 3 containers.So than the width of the work, play and study containers 
+we set to 300 cause 300+300+300( for the 3 containers = 900) that means they will spread equally.*/
+.right-containers{
+    width:1200px;
+    margin-top: 90px;
+    
+   
+}
+
+
+/*On the dot-icons we set the height so that they can shrinks and then appling object-contain with aspect ratio- we can  assume */
+.el{
+    height: 20px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    margin-left: 180px ;
+    cursor: pointer;
+}
+
+.el4,
+.el6{
+    height: 20px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    margin-left: 130px ;
+    cursor: pointer;
+}
+
+.el5{
+    height: 20px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    margin-left: 160px;
+    cursor: pointer;
+}
+
+.work-heading,
+.play-heading{
+    margin-left: 40px;
+}
+
+.hr{
+    margin-left: 40px;
+    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.2rem;
+}
+
+.paragraphs{
+    margin-left: 40px;
+    margin-top: -20px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.2rem;
+    font-size: 0.9rem;
+   
+}
+
+.plus-text{
+    padding-bottom: 30px;
+
+}
+
+.headings{
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.2rem;
+}
+
+/*When styling empty divs we always set width and height - if we set the for divs inside the container we could not change their z- index because they belong to the same div container
+Thtas why the div containers we are using are set outside of the containers as an independent containers*/
+.for-icon{
+    width: 345px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: rgb(241, 76, 25);
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    left: 340px;
+}
+
+.for-icon-four{
+    width: 345px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: rgb(123, 255, 0);
+    position: absolute;
+    z-index: 1;
+    top: 360px;
+    left: 340px;
+}
+
+.for-icon-three{
+    width: 345px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: rgb(255, 0, 128);
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    left: 1115px;
+}
+
+.for-icon-six{
+    width: 345px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: rgb(255, 238, 0);
+    position: absolute;
+    z-index: 1;
+    top: 360px;
+    left: 1115px;
+}
+
+.for-icon-two{
+    width: 345px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: rgba(0, 217, 255, 0.671);
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    left: 728px;
+    
+}
+
+.for-icon-five{
+    width: 345px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: rgb(122, 13, 150);
+    position: absolute;
+    z-index: 1;
+    top: 360px;
+    left: 728px;
+    
+}
+
+.work-img,
+.play-img,
+.study-img,
+.exercise,
+.social,
+.self-care{
+    position: absolute;
+    left:220px;
+    top:-10px;
+   overflow: hidden;
+    width: 110px;
+    color: black;
+}
+
+.work-img{
+    top:1px;
+}
+
+.play-img{
+    top:3px;
+}
+
+.study-img{
+    top: 5px;
+}
+
+.exercise{
+    top:4px;
+}
+
+.social{
+    top:-8px;
+}
+
+.self-care{
+    top:-2px;
+}
+
+.mobile-version{
+    display: none;
+}
+
+
+/*always working with the mobile version in a new container inside the body, with different classes*/
+
+@media (max-width:480px){
+    
+   main{
+    display: none;
+   }
+/*Same for bringing the mobile container to the center we use transform translate*/ 
+   .mobile-version{
+    display: block;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left:50%;
+    top:50%;
+    width: 420px;
+}
+
+.avatar-mobile{
+    width: 80px;
+    height: 80px;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+/*We can use justify content on elements inside the divs*/
+.blue{
+    width: 380px;
+    display: flex;
+    background-color: rgb(89, 60, 253);
+    border-radius: 20px;
+    justify-content: center;
+    padding: 30px 0;
+    align-items: center;
+    position: relative;
+    left: 20px;
+    z-index: 2;
+}
+
+.text{
+    margin-left: 20px;
+    font-family: Roboto,sans-serif;
+}
+
+.container-top{
+   position: absolute;
+  
+}
+
+.name-mobile{
+    font-size: 1.6rem;
+}
+
+/*Sometimes we move the containers with position relative and left side as in this case */
+.empty{
+    width: 380px;
+    height: 120px;
+    background-color:  rgba(24, 28, 83, 0.993);
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    left:20px;
+    bottom: 30px;
+}
+
+.headings{
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.2rem;
+}
+
+
+/*If we use position absolute we cant use justify content */
+.daily-wk-mon{
+      position: absolute;
+    display: flex;
+   bottom: 20px;
+   font-family: Roboto,sans-serif;
+   margin-left: 50px;
+   z-index: 2;
+   justify-content: center;
+
+   color: rgb(197, 183, 209);
+}
+
+.d-mobile{
+    margin-right: 60px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.w-mobile{
+    margin-right: 60px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.m-mobile{
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.d-mobile:hover,
+.m-mobile:hover,
+.w-mobile:hover{
+    color: white;
+    transition: scale ;
+}
+   
+.work-mobile,
+.play-mobile,
+.study-mobile,
+.exercise-mobile,
+.social-mobile,
+.care-mobile{
+    width:380px;
+    background-color: rgba(24, 28, 83, 0.993);
+    margin-top: 340px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    left:20px
+}
+
+.play-mobile{
+    position: absolute;
+    top:235px;
+
+}
+
+
+.care-mobile{
+    position: absolute;
+    top:1190px;
+}
+
+.social-mobile{
+    position: absolute;
+    top:950px;
+}
+
+
+.exercise-mobile{
+    position: absolute;
+    top:710px;
+}
+
+.work-container2{
+    width: 380px;
+    position:relative;
+    left: 20px;
+    top:30px;
+    border-radius: 20px;
+    background-color: rgba(0, 217, 255, 0.671);
+}
+
+/*We use position relative to arrange elements inside the divs or for the overlays(when we create overlay but not for positioning containers!) */
+.work-container{
+    width: 380px;
+    height: 100px;
+    background-color: rgb(241, 76, 25);
+    border-radius: 20px;
+    position: absolute;
+    top:300px;
+    left:20px;
+
+}
+
+.work-container3{
+    width: 380px;
+    position: absolute;
+    top:770px;
+    left:20px;
+    height: 100px;
+    background-color: rgb(255, 0, 128);
+    border-radius: 20px;
+}
+
+
+.work-container4{
+    width: 380px;
+    position: absolute;
+    top:1010px;
+    left:20px;
+    height: 100px;
+    background-color: rgb(123, 255, 0);
+    border-radius: 20px;
+}
+
+.work-container5{
+    width: 380px;
+    position: absolute;
+    top:1250px;
+    left:20px;
+    height: 100px;
+    background-color: rgb(122, 13, 150);
+    border-radius: 20px;
+}
+
+.work-container6{
+    width: 380px;
+    position: absolute;
+    top:1490px;
+    left:20px;
+    height: 100px;
+    background-color: rgb(255, 238, 0);
+    border-radius: 20px;
+}
+
+
+
+.study-mobile{
+    position: absolute;
+    top:470px;
+}
+
+
+.work-heading-mobile{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+   position: absolute;
+   top:20px;
+    
+}
+
+.work-mobile-img{
+    position: relative;
+    width: 80px;
+    left:270px;
+    bottom: 10px;
+}
+
+
+
+.paragraphs{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.2rem;
+    font-size: 0.9rem;
+   
+}
+
+
+.hr-mobile{
+    margin-left: 40px;
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.2rem;
+    position: relative;
+    top: 0px;
+    margin-right: 60px;
+}
+
+.mobile-together{
+    width: 380px;
+    display: flex;
+    align-items: center;
+  position: relative;
+  top: 50px;
+  padding-bottom: 30px;
+}
+
+/*On the dot-icons we set the height so that they can shrinks and then appling object-contain with aspect ratio- we can  assume */
+.el{
+    height: 20px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    margin-left: 200px ;
+    cursor: pointer;
+}
+
+
+.el6{
+    height: 20px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    margin-left: 160px ;
+    cursor: pointer;
+}
+
+
+.el4{
+    height: 20px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    margin-left: 170px ;
+    cursor: pointer;
+
+
+}
+
+.el2{
+    height: 20px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    margin-left: 210px ;
+    cursor: pointer;
+
+
+}
+
+
+
+.plus-text-mobile{
+    padding-bottom: 30px;
+  
+
+}
+
+
+.overlay-mobile{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.13);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 20px;
+    
+}
+
+/*We apply the overlay on the divs when hovered where we incrase the opacity to 1 */
+.work:hover .overlay-mobile,
+.play:hover .overlay-mobile,
+.study:hover .overlay-mobile,
+.exercise:hover .overlay-mobile,
+.social:hover .overlay-mobile,
+.self-care:hover .overlay-mobile{
+
+    opacity: 1;
+}
+
+
+.paragraphs-mobile{
+    
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.2rem;
+    font-size: 0.9rem;
+   
+}
+
+
+}
+
+
